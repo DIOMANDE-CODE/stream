@@ -89,11 +89,21 @@ WSGI_APPLICATION = 'musicplayer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config()
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'ci_sound',
+#         'USER': 'postgres',
+#         'PASSWORD': '40398854',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+#     }
+# }
 
+#new 
+DATABASES = {
+    'default':dj_database_url.config()
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
