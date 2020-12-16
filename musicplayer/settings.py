@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +27,7 @@ SECRET_KEY = 'rbh8%u_$en!zodi6j_ual3azei=2(@yd1zrl7n0kz^t!xe$t2o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 10000
 # Application definition
@@ -88,13 +90,7 @@ WSGI_APPLICATION = 'musicplayer.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db_ci_sound',
-        'USER': 'postgres',
-        'PASSWORD': '40398854',
-        'HOST': 'localhost',
-        'PORT': '5432'
+    'default': dj_database_url.config()
     }
 }
 
@@ -177,3 +173,6 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
