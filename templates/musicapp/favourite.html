@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load socialaccount %}
-{% block title %} Favourites {% endblock title %}
+{% block title %} Favoris {% endblock title %}
 
 {% block body %}
 <br>
@@ -21,17 +21,17 @@
 <br>
 
 <center>
-  <h3>Favourites</h3>
+  <h3>Favoris</h3>
 </center>
 
 <table class="table table-hover table-primary">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Song Name</th>
+      <th scope="col">Titre</th>
       <th scope="col">Album</th>
-      <th scope="col">Singer</th>
-      <th scope="col">Song</th>
+      <th scope="col">Artiste</th>
+      <th scope="col">Musique</th>
       <th scope="col">Action</th>
 
     </tr>
@@ -52,7 +52,7 @@
       <td>
         <form method="post">
           {% csrf_token %}
-          <input class="btn btn-primary" type="submit" value="Remove" name={{song.id}}>
+          <input class="btn btn-primary" type="submit" value="Supprimez" name={{song.id}}>
         </form>
       </td>
     </tr>

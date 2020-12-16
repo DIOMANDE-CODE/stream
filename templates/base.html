@@ -137,21 +137,21 @@
     <nav class="navbar navbar-expand-md navbar-primary bg-primary">
         <div class="container">
             <h1><a href="{% url 'index' %}" class="navbar-brand">
-            <strong style="color:white">GALVANIC</strong></a></h1>
+            <strong style="color:white">CI-Sound</strong></a></h1>
             <div class="collapse navbar-collapse">
-                <a href="{% url 'index' %}" class="btn btn-outline-light mt-2 mx-1">HOME</a>
-                <a href="{% url 'all_songs' %}" class="btn btn-outline-light mt-2 mx-1">ALL SONGS</a>
+                <a href="{% url 'index' %}" class="btn btn-outline-light mt-2 mx-1">Acceuil</a>
+                <a href="{% url 'all_songs' %}" class="btn btn-outline-light mt-2 mx-1">Musiques</a>
                 {% if request.user.is_active %}
                 
                 <div class="btn-group mt-2 mx-1">
-                    <a type="button" href="{% url 'mymusic' %}" class="btn btn-outline-light">MY MUSIC</a>
+                    <a type="button" href="{% url 'mymusic' %}" class="btn btn-outline-light">Mes musiques</a>
                     <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{% url 'playlist' %}">Playlists</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'favourite' %}">Favourite Songs</a>
+                        <a class="dropdown-item" href="{% url 'favourite' %}">Sons favoris</a>
                         </div>
                 </div>
                 {% endif %}
@@ -159,11 +159,11 @@
             
             <div class="collapse navbar-collapse justify-content-end" id="navbar">
             {% if request.user.is_active %}
-            <h5 class="text-white mt-3 mx-2">Hi, {{ request.user.username }}</h5>
-            <a href="{% url 'logout' %}" class="btn btn-light mt-2 mx-2"> Sign Out <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            <h5 class="text-white mt-3 mx-2">Bienvenue, {{ request.user.username }}</h5>
+            <a href="{% url 'logout' %}" class="btn btn-light mt-2 mx-2"> Se deconnecter <i class="fa fa-sign-out" aria-hidden="true"></i></a>
             {% else %}
-            <a href="{% url 'login' %}" class="btn btn-light mt-2 mx-2"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>
-            <a href="{% url 'signup' %}" class="btn btn-light mt-2 mx-2"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a>
+            <a href="{% url 'login' %}" class="btn btn-light mt-2 mx-2"><i class="fa fa-sign-in" aria-hidden="true"></i> Se connecter</a>
+            <a href="{% url 'signup' %}" class="btn btn-light mt-2 mx-2"><i class="fa fa-user-plus" aria-hidden="true"></i> S'inscrire</a>
             {% endif %}            
             </div>
         </div>

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load socialaccount %}
-{% block title %} Recently Played {% endblock title %}
+{% block title %} Lus recemments {% endblock title %}
 
 {% block body %}
 <br>
@@ -13,7 +13,7 @@
           <input type="text" class="form-control input-lg " name="q" style="border-radius: 5px;"
           value="{{ request.GET.q }}" placeholder= "Search Songs "/>               
           <span class='input-group-btn mx-2'>
-            <button type="submit" style="border-radius: 5px;" class="btn btn-primary">Search</button>
+            <button type="submit" style="border-radius: 5px;" class="btn btn-primary">Cherchez</button>
           </span>
         </div>
       </div>
@@ -22,12 +22,12 @@
   <!-- <hr> -->
   {% if not query_search %}
   <header class="section-heading">
-    <h5 class="section-title">RECENTLY PLAYED</h5>
+    <h5 class="section-title">recemments joués</h5>
   </header>
   <hr>
   {% else %}
   <header class="section-heading">
-    <h5 class="section-title">SEARCH RESULTS</h5>
+    <h5 class="section-title">Resultat de la recherche</h5>
   </header>
   <hr>
   {% endif %}

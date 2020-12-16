@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% load socialaccount %}
-{% block title %} Playlist Songs {% endblock title %}
+{% block title %} Musique de la Playlist {% endblock title %}
 {% block body %}
 <br>
 {% if messages %}
 <ul class="messages" style="width: 600px;margin-left:400px">
   {% for message in messages %}
   <div class="alert alert-success">
-    <strong>Success!</strong> {{message}}
+    <strong>Réussie!</strong> {{message}}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -24,10 +24,10 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Song Name</th>
+      <th scope="col">Nom de la musique</th>
       <th scope="col">Album</th>
-      <th scope="col">Singer</th>
-      <th scope="col">Song</th>
+      <th scope="col">Artiste</th>
+      <th scope="col">Musique</th>
       <th scope="col">Action</th>
 
     </tr>
@@ -48,7 +48,7 @@
       <td>
         <form method="post">
           {% csrf_token %}
-          <input class="btn btn-primary" type="submit" value="Remove" name={{song.id}}>
+          <input class="btn btn-primary" type="submit" value="Supprimez" name={{song.id}}>
         </form>
       </td>
     </tr>

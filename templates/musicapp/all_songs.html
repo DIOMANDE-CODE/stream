@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load socialaccount %}
-{% block title %} All Songs {% endblock title %}
+{% block title %} Toutes les musiques {% endblock title %}
 {% block body %}
 
 <br>
@@ -11,18 +11,10 @@
         <div class="input-group">
           <div class="input-group">
             <input type="text" class="form-control input-lg" style="border-radius: 5px;"
-            name="q" value="{{ request.GET.q }}" placeholder= "Search Songs "/>
+            name="q" value="{{ request.GET.q }}" placeholder= "Chercher une musique "/>
 
-            <select name="languages" class="custom-select mx-1" style="border-radius: 5px;">
-              <option selected="selected" disabled>Languages</option>
-              {% if all_languages %}
-                  {% for language in all_languages %}
-                      <option value={{language}}>{{language}}</option>
-                  {% endfor %}
-              {% endif %}
-            </select>
             <select name="singers" class="custom-select mx-1" style="border-radius: 5px;">
-              <option selected="selected" disabled>Singers</option>
+              <option selected="selected" disabled>Chanteurs</option>
               {% if all_singers %}
                   {% for singer in all_singers %}
                       <option value={{singer}}>{{singer}}</option>
@@ -31,7 +23,7 @@
             </select>
                           
             <span class='input-group-btn'>
-              <button type="submit" style="border-radius: 5px;" class="btn btn-primary">Search</button>
+              <button type="submit" style="border-radius: 5px;" class="btn btn-primary">Effectuer une recherche</button>
             </span>
           </div>
         </div>
@@ -41,12 +33,12 @@
 
   {% if not query_search %}
   <header class="section-heading">
-    <h5 class="section-title">ALL SONGS</h5>
+    <h5 class="section-title">Toutes les musiques</h5>
   </header>
   <hr>
   {% else %}
   <header class="section-heading">
-    <h5 class="section-title">SEARCH RESULTS</h5>
+    <h5 class="section-title">Resultat de la recherche</h5>
   </header>
   <hr>
   {% endif %}

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load socialaccount %}
-{% block title %} Home {% endblock title %}
+{% block title %} Acceuil {% endblock title %}
 
 {% block body %} 
 
@@ -11,10 +11,10 @@
           <div class="form-group">
               <div class="input-group">
                   <input type="text" class="form-control input-lg " name="q" style="border-radius: 5px;"
-                  value="{{ request.GET.q }}" placeholder= "Search Songs "/>
+                  value="{{ request.GET.q }}" placeholder= "Chercher une Musique "/>
                                 
                   <span class='input-group-btn mx-2'>
-                    <button type="submit" style="border-radius: 5px;" class="btn btn-primary">Search</button>
+                    <button type="submit" style="border-radius: 5px;" class="btn btn-primary">Recherche</button>
                   </span>
               </div>
           </div>
@@ -23,7 +23,7 @@
 
 {% if query_search %}
   <header class="section-heading">
-    <h5 class="section-title">SEARCH RESULTS</h5>
+    <h5 class="section-title">Resultat de la recherche</h5>
   </header>
 <hr>
 {% endif %}
@@ -31,7 +31,7 @@
 {% if recent_songs %}
 {% if not query_search %}
   <header class="section-heading">
-    <h5 class="section-title">RECENTLY PLAYED</h5>
+    <h5 class="section-title">Recemment jouées</h5>
   </header>
 <hr>
 {% endif %}
@@ -48,7 +48,7 @@
           </div>
       </div>
       {% endfor %}
-      <a href="{% url 'recent' %}" class="btn btn-primary float-right" style="height: 135px;"><center style="margin-top: 45px;">View all <i class="fa fa-arrow-right" aria-hidden="true"></i></center></a>
+      <a href="{% url 'recent' %}" class="btn btn-primary float-right" style="height: 135px;"><center style="margin-top: 45px;">Voir tout <i class="fa fa-arrow-right" aria-hidden="true"></i></center></a>
 
 </div>
 
@@ -63,7 +63,7 @@
 
   <header class="section-heading">
     <!-- <a href="{% url 'all_songs' %}" class="btn btn-primary float-right">View all</a> -->
-    <h5 class="section-title">ALL SONGS</h5>
+    <h5 class="section-title">Toutes les Musiques</h5>
   </header>
 <hr>
 {% endif %}
@@ -83,7 +83,7 @@
       {% endfor %}
       {% endif %}
       {% if not query_search %}
-      <a href="{% url 'all_songs' %}" class="btn btn-primary float-right" style="height: 135px;"><center style="margin-top: 45px;">View all <i class="fa fa-arrow-right" aria-hidden="true"></i></center></a>
+      <a href="{% url 'all_songs' %}" class="btn btn-primary float-right" style="height: 135px;"><center style="margin-top: 45px;">Voir + <i class="fa fa-arrow-right" aria-hidden="true"></i></center></a>
       {% endif %}
     </div>
 <br>
@@ -93,7 +93,7 @@
 <!-- Hindi Songs -->
 {% if not query_search %}
   <header class="section-heading">
-    <h5 class="section-title">HINDI SONGS</h5>
+    <h5 class="section-title">Musique ivoirienne</h5>
   </header>
 <hr>
 {% endif %}
@@ -113,7 +113,7 @@
       {% endfor %}
       {% endif %}
       {% if not query_search %}
-      <a href="{% url 'hindi_songs' %}" class="btn btn-primary float-right" style="height: 135px;"><center style="margin-top: 45px;">View all <i class="fa fa-arrow-right" aria-hidden="true"></i></center></a>
+      <a href="{% url 'hindi_songs' %}" class="btn btn-primary float-right" style="height: 135px;"><center style="margin-top: 45px;">Voir + <i class="fa fa-arrow-right" aria-hidden="true"></i></center></a>
       {% endif %}
 </div>
 <br>
@@ -122,7 +122,7 @@
 <!-- English Songs -->
 {% if not query_search %}
   <header class="section-heading">
-    <h5 class="section-title">ENGLISH SONGS</h5>
+    <h5 class="section-title">Musique ivoirienne</h5>
   </header>
 <hr>
 {% endif %}
@@ -142,7 +142,7 @@
       {% endfor %}
       {% endif %}
       {% if not query_search %}
-      <a href="{% url 'english_songs' %}" class="btn btn-primary float-right" style="height: 135px;"><center style="margin-top: 45px;">View all <i class="fa fa-arrow-right" aria-hidden="true"></i></center></a>
+      <a href="{% url 'english_songs' %}" class="btn btn-primary float-right" style="height: 135px;"><center style="margin-top: 45px;">Voir + <i class="fa fa-arrow-right" aria-hidden="true"></i></center></a>
       {% endif %}
     </div>
 </div>

@@ -257,13 +257,13 @@ def detail(request, song_id):
             playlist_name = request.POST["playlist"]
             q = Playlist(user=request.user, song=songs, playlist_name=playlist_name)
             q.save()
-            messages.success(request, "Song added to playlist!")
+            messages.success(request, "Musique ajoutée à la playlist!")
         elif 'add-fav' in request.POST:
             is_fav = True
             query = Favourite(user=request.user, song=songs, is_fav=is_fav)
             print(f'query: {query}')
             query.save()
-            messages.success(request, "Added to favorite!")
+            messages.success(request, "Ajouté à la playlist!")
             return redirect('detail', song_id=song_id)
         elif 'rm-fav' in request.POST:
             is_fav = True
@@ -272,7 +272,7 @@ def detail(request, song_id):
             print(f'song: {songs.id} - {songs}')
             print(f'query: {query}')
             query.delete()
-            messages.success(request, "Removed from favorite!")
+            messages.success(request, "Supprimé des favoris!")
             return redirect('detail', song_id=song_id)
 
     context = {'songs': songs, 'playlists': playlists, 'is_favourite': is_favourite,'last_played':last_played_song}
@@ -296,7 +296,7 @@ def playlist_songs(request, playlist_name):
         song_id = list(request.POST.keys())[1]
         playlist_song = Playlist.objects.filter(playlist_name=playlist_name, song__id=song_id, user=request.user)
         playlist_song.delete()
-        messages.success(request, "Song removed from playlist!")
+        messages.success(request, "Musique supprimée avec succès!")
 
     context = {'playlist_name': playlist_name, 'songs': songs}
 
@@ -311,6 +311,6 @@ def favourite(request):
         song_id = list(request.POST.keys())[1]
         favourite_song = Favourite.objects.filter(user=request.user, song__id=song_id, is_fav=True)
         favourite_song.delete()
-        messages.success(request, "Removed from favourite!")
+        messages.success(request, "Effacé des favoris!")
     context = {'songs': songs}
     return render(request, 'musicapp/favourite.html', context=context)

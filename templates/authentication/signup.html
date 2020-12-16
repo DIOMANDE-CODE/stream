@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% load socialaccount %}
-{% block title %} MusicApp | {{ title }} {% endblock title %}
+{% block title %} MusicApp | inscrire {% endblock title %}
 {% block header %}
 <style>
     .or-seperator {
@@ -22,20 +22,20 @@
 {% block body %}
 <main role="main" class="container col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
     <br>
-    <h1 class="text-center">Sign Up</h1>
+    <h1 class="text-center">S'inscrire</h1>
     <br> 
     <a href="{% provider_login_url 'google' process='login' %}" class="btn btn-outline-dark btn-block">
       <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-      Sign up with Google
+      S'inscrire avec google
     </a>
     <div class="or-seperator"><i>or</i></div>
     <form method="post">
       {% csrf_token %}
       {{form|crispy}}
-      <button class="btn btn-success btn-block" type="submit">Sign Up</button>
+      <button class="btn btn-success btn-block" type="submit">S'inscrire</button>
     </form>
     <br>
-    <p>Already have an account? Please <a href="{% url 'login' %}">log in</a>.</p>
+    <p>Déja un compte? S'il vous plaît <a href="{% url 'login' %}">Se connecter</a>.</p>
   </main>
   
 {% endblock body %}
