@@ -1,2 +1,2 @@
 web: gunicorn musicplayer.wsgi
-gunicorn app:app -b :8080 --timeout 120 --workers=3 --threads=3 --worker-connections=1000
+gunicorn musicplayer.wsgi:application -w 2 -b :8000 --timeout 120
